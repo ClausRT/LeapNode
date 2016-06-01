@@ -1,8 +1,11 @@
-var Frame = require('../../public/leapjs/lib/frame.js')
-  , mongoose = require('mongoose')
+var mongoose = require('mongoose')
+  , config = {
+      volunteerName: String,
+      gesture: String,
+      currentFrameRate: Number,
+      fingers: []
+  }
+  , schema = mongoose.Schema(config)
   ;
 
-console.log(Frame);
-var schema = mongoose.Schema(Frame);
-
-module.exports = mongoose.model('Frame', schema);
+module.exports = mongoose.model('Frames', schema);
