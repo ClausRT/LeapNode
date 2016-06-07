@@ -1,9 +1,9 @@
 var mongoose = require('mongoose')
   , config = {
-      volunteerName: String,
-      gesture: String,
-      currentFrameRate: Number,
-      fingers: []
+      timestamp: {type: Date, default: Date.now()},
+      gestureName: String,
+      collaborator: String,
+      frames: [String]
   }
   , schema = mongoose.Schema(config)
   ;
