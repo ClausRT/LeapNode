@@ -6,21 +6,21 @@
         <meta name="viewport" content="width=device-width">
         <!-- build:css css/home.min.css -->
         <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
+        <!--link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css"-->
         <!-- endbuild -->
     </head>
     <body class="container">
-        <div ng-view>
+        <div class="container" ng-view>
         
         </div>
         <!-- TESTE da ENGINE VIEW -->
-        <footer>
-            <small>
-                <p>Titulo do projeto: {{title}}</p>
-                <p>Versão atual: {{version}}</p>
-                <p>Autores: {{authors}}</p>
-                <p>Licence: {{license}}</p>
-                <p>Caso queira ver o nosso código ou contribuir com o projeto, veja o nosso <a href="{{url}}">GitHub</a></p>
+        <footer class="container">
+            <small class="footer">
+                <p>Titulo do projeto: {{title}} <br>
+                Versão atual: {{version}}       <br>
+                Autores: {{authors}}            <br>
+                Licence: {{license}}            <br>
+                Caso queira ver o nosso código ou contribuir com o projeto, veja o nosso <a href="{{url}}">GitHub</a></p>
             </small>
         </footer>
     </body>
@@ -30,5 +30,9 @@
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="js/main.js"></script>    
     <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/TestController.js"></script>
+    <script src="js/controllers/NumbersController.js"></script>
+    <script src="vendor/leapjs/leap-0.6.4.js"></script>
+    <script src="vendor/leapjs-plugins/main/leap-plugins-0.1.11.js"></script>
     <!-- endbuild -->
 </html>

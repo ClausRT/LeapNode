@@ -6,5 +6,15 @@ angular.module('leap-node', ['ngRoute', 'ngResource']).config(function ($interpo
         controller: 'HomeController'
     });
     
+    $routeProvider.when('/test', {
+        templateUrl: 'partials/test.html',
+        controller: 'TestController'
+    });
+    
+    $routeProvider.when('/numbers', {
+        templateUrl: 'partials/numbers.html',
+        controller: 'NumbersController'
+    });
+    
     $routeProvider.otherwise({redirectTo: '/home'});
 });
