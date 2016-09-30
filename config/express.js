@@ -1,5 +1,6 @@
 var express = require ('express')
-  , load = require ('express-load')
+  //, load = require ('express-load')
+  , consign = require ('consign')
   , hbs = require ('hbs')
   ;
 
@@ -11,7 +12,8 @@ module.exports = function () {
     app.set('views', './app/views/');
     app.use(express.static('./public'));
     
-    load('models', {cwd: 'app'})
+    consign({cwd: 'app'})
+        .include('models')
         .then('controllers')
         .then('routes')
         .into(app);
