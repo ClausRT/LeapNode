@@ -2,7 +2,7 @@ angular.module('leap-node', ['ngRoute', 'ngResource']).config(function ($interpo
     //$interpolateProvider.startSymbol('[[').endSymbol(']]');   //Caso HBS e Angular começarem a brigar pela guarda dos {{}}, definir novos para o Angular
     
     $routeProvider.when('/home', {
-        templateUrl: 'partials/home.html',
+        templateUrl: 'partials/welcome.html',
         controller: 'HomeController'
     });
     
