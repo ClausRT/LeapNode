@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../public/images/leapicon.ico">
+
+  <title>LeapNode</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../public/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="../../public/stylesheets/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../../public/stylesheets/cover.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="../../public/stylesheets/welcome.css">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="bootstrap-3.3.6/docs/assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+
+  <!-- INÍCIO MODAL -->
+  <div id="contactModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-main" id="contactModalLabel">Contacts</h4>
+        </div>
+        <div class="modal-body">
+          <h4 class="semi-title">Thank you for looking for us!</h4>
+
+          <p class="modal-text">Here are some contacts and informations about the Developers and the Universities, that help us with manufacture and laboratories. We are open to tips, suggestions and for questions too. If you have interest or a doubt, send us an e-mail!</p>
+
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Universities
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <h4 align="left" class="modal-title">IFSul Campus Pelotas</h4>
+                  <p style="color:#999">INSERIR UM BLABLABLA</p>
+                  <h4 align="left" class="modal-title">UFPel Campus Porto</h4>
+                  <p style="color:#999">INSERIR UM BLABLABLA</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Developers' Contacts
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <h4 align="left" class="modal-title">Developers:</h4>
+                  <p style="color:#999">Claus Tessmann: clausrt@outlook.com</p>
+                  <p style="color:#999">Richer Magalhães: richerms@hotmail.com</p>
+                  <h4 align="left" class="modal-title">Mentor:</h4>
+                  <p style="color:#999">Leroi Oliveira: leroioliveira@gmail.com</p>
+                  <h4 align="left" class="modal-title">GitHub:</h4>
+                  <a href="https://github.com/richerms/LeapNode-IFSUL" style="color:#999">https://github.com/richerms/LeapNode-IFSUL</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-button" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- FIM MODAL -->
+
+
+  <!-- INÍCIO NAVBAR -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a style="color:#A4F468" class="navbar-brand" href="welcome.html">Welcome to LeapNode</a>
+      </div>
+      <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" style="padding-top: 0.6%;">
+          <div class="form-group">              
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="welcome.html">Home</a></li>
+              <li><a target="_blank" href="coletadedados.html">Application</a></li>
+              <li><a href="" data-toggle="modal" data-target="#contactModal">Contact</a></li>
+            </ul>
+          </div><!--/.navbar-collapse -->
+        </form>
+      </div>
+    </nav>
+    <!-- FIM NAVBAR -->
+    <div class="cover-container">
+      <div id="header"></div>
+      <div class="welcome-box">
+        <img class="leap-logo" src="../../public/images/leaplogo.png">
+        <p class="lead">Our purpose is to help deaf children to easily learn portuguese through LIBRAS apps.</p>
+        <a href="coletadedados.html" class="btn btn-lg btn-default app-button">Go to the App!</a>
+
+
+        <div class="container clearfix logo-container">
+          <img src="../../public/images/ifsul.png" class="img-responsive ifsul-logo">
+          <img src="../../public/images/ufpel.png" class="img-responsive ufpel-logo">
+        </div>
+      </div>
+
+
+      <div class="footer">
+        <div>
+          <p>developed by richerms and clausrt | respository GitHub</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../public/js/jquery.min.js"><\/script>')</script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap-3.3.6/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

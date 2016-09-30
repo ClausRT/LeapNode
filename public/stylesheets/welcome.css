@@ -1,0 +1,118 @@
+body {
+  background-repeat:no-repeat; 
+  background-color:white;
+  background-position:center;
+  background-image: url("../images/bg.jpg");
+}
+
+#headerwrapper {
+  background: #ecf3f9;
+  width: 100%;
+  height: 191px;
+  position: relative; 
+}
+
+#header {
+  width: 100%;
+  height: 170px;
+  display: block;
+  margin: 0 auto;
+}
+
+p.modal-text {
+  color:#999;
+  margin:30px 20px 30px;
+}
+
+h4.semi-title {
+  color:#666; 
+  font-style:italic;
+}
+
+img.leap-logo {
+  width: 40%;
+  margin: 3%;
+  vertical-align: middle;
+}
+
+.ifsul-logo {
+  float: left;
+  margin: auto auto auto 15%;
+  width: 30%;
+}
+
+.ufpel-logo {
+  float: right;
+  margin: auto 15% auto auto;
+  width: 12%;
+}
+
+a.app-button {
+  background-color: #A4F468;
+  color: #333;
+  border-color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2% auto 2% auto;
+}
+
+.app-button:hover,
+.app-button:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #51e62b;
+  border: 1px solid #fff;
+}
+
+.welcome-box {
+  background-color: #CCCCCC;
+  border-radius: 48px;
+  opacity: 0.9;
+  width: 80%;
+  height: 60vh;
+  margin: auto;
+}
+
+.cover-container {
+  position: relative;
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer p {
+  color: #666666;
+}
+
+.logo-container {
+  width: 100%;
+  margin-top: 2%;
+}
+
+button.modal-button {
+  background-color:#A4F468;
+  color:#fff;
+  border-color:#A4F468;
+}
+
+.modal-main {
+  color: #666;
+  font-style: italic;
+}
+
+.modal-title {
+  color:#666;
+  padding-left:50px;
+}
+
+@media screen and (min-width: 1700px){
+  .lead {
+    font-size: 28px;
+  }
+}
