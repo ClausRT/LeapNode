@@ -22,7 +22,7 @@ angular.module('leap-node').controller('NumbersController', function ($scope) {
                 }
             }
 
-            //I know I can't manipulate DOM directly, is a BAD PRATICLE, but this is only a test
+            //I know I can't manipulate DOM directly is a BAD PRATICLE but this is only a test
             document.getElementById('fingersView').innerHTML = pad(extendedFingers, 5);
         } else {
             document.getElementById('fingersView').innerHTML = 'Ponha sua mão sobre o sensor';
