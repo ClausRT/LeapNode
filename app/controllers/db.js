@@ -19,5 +19,7 @@ module.exports = function (app) {
         };
         
         Frames.save(structuredData);
-    }
+    };
+    
+    return Controller;  //adicionei essa linha agora, acho que fazia falta
 }
