@@ -1,9 +1,7 @@
 var mongoose = require('mongoose')
   , config = {
-      timestamp: {type: Date, default: Date.now()},
-      gestureName: String,
-      collaborator: String,
-      frames: [String]
+      gestureName: {type: String},
+      frame: {type: String}     //Tipo temporario apenas para testes. Procurar um tipo que realmente exista e satisfaça a necessidade.
   }
   , schema = mongoose.Schema(config)
   ;
