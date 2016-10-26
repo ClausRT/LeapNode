@@ -3,7 +3,8 @@ module.exports = {
     'development': {
         'port': 3000,
         'address': "localhost",
-        'host': "localhost"
+        'host': "localhost",
+        'db': "mongodb://localhost/leapnode_test"
     },
     'production': {
         'port': process.env.PORT,
