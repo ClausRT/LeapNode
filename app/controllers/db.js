@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    var Frames = app.models.frames
+    var Frames = app.models.gestures
       , Volunteers = app.models.volunteers
       , Controller = {};
     
@@ -24,13 +24,19 @@ module.exports = function (app) {
             //Separates the frames array in frame objects
             //Add the gesture property to the oneFrame object
             for (var k1 in volunteer.gestures[k0].frames) {
-                oneFrame.volunteerID = 1;     //Não sei como setar uma variavel que vai virar um ID
+                oneFrame.volunteerID = 1;     //This value will be changed to a valid _id
                 oneFrame.gestureName = gestureName;
                 
+                //I think that stringify the JSON is a better idea than move all his propreties to de oneFrame object
+                //Extract one frame from volunteer
+                oneFrame.frame = JSON.stringify(volunteer.gestures[k0].frames[k1]);
+                
+                /*
                 //Add the frame's propertys to the oneFrame object
                 for (var k2 in volunteer.gestures[k0].frames[k1]) {
                     oneFrame[k2] = volunteer.gestures[k0].frames[k1][k2];
                 }
+                */
                 
                 //Save the individual frames and get they _id
                 //Save the oneFrame objects
@@ -38,6 +44,7 @@ module.exports = function (app) {
                     newVolunteer.gestures.push(doc._id);
                 });
                 
+                //Clear the oneFrame object
                 oneFrame = {};
             }
         }

@@ -1,7 +1,8 @@
 var mongoose = require('mongoose')
   , config = {
-      gestureName: {type: String},
-      frame: {type: String}     //Tipo temporario apenas para testes. Procurar um tipo que realmente exista e satisfaça a necessidade.
+      volunteer: mongoose.Schema.Types.ObjectId,
+      gestureName: String,
+      frame: String
   }
   , schema = mongoose.Schema(config)
   ;
