@@ -1,3 +1,5 @@
+//To do: Make more clear erro's message
+
 var mongoose = require('mongoose')
   , config = {
       volunteer: {type: mongoose.Schema.Types.ObjectId, required: [true, 'Internal error on get volunteer._id']},
