@@ -1,17 +1,20 @@
 module.exports = function (app) {
-    var Frames = app.models.gestures
+    var Gestures = app.models.gestures
       , Volunteers = app.models.volunteers
       , Controller = {};
     
     //Method thats save the volunteer data plus they gestures
     Controller.saveData = function (volunteer) {    
         var newVolunteer = {
-            name: "",
-            gestures: []    //procurar depois como referenciar varias _id's do mongoDB
-        },
-            oneFrame = {}
-         ,  gestureName = ""
-         ,  volunteerId
+                name: "",
+                gestures: []    //procurar depois como referenciar varias _id's do mongoDB
+        }
+          , gesture = {
+                name: "",
+                frames: []
+        }
+          //, gestureName = ""
+          , volunteerId
           ;
         
         //Get the basic informations of volunteer
@@ -40,7 +43,7 @@ module.exports = function (app) {
                 
                 //Save the individual frames and get they _id
                 //Save the oneFrame objects
-                Frames.save(oneFrame, function (err, doc) {
+                Gestures.save(oneFrame, function (err, doc) {
                     newVolunteer.gestures.push(doc._id);
                 });
                 
@@ -56,7 +59,7 @@ module.exports = function (app) {
         
         //Find all the previous save gestures and update their _id reference to the volunteer
         for (var k in newVolunteer.gestures){
-            Frames.findOne({ _id: newVolunteer.gestures[k]}, function (err, frame) {
+            Gestures.findOne({ _id: newVolunteer.gestures[k]}, function (err, frame) {
                 frame.volunteerID = volunteerId;
                 frame.save();                
             });
