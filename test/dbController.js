@@ -1,6 +1,7 @@
-var Controller = require ('../app/controllers/db')//I need a app object somehow
-  , expect = require('chai').expect
-  , sinon = require('sinon')
+var expect = require('chai').expect
+  , mongoose = require('mongoose')
+  , app = require('../config/express.js')()
+  , Controller = require ('../app/controllers/db.js')(app)
   ;
 
 describe('DataBase Controller', function () {
@@ -45,14 +46,17 @@ describe('DataBase Controller', function () {
         });
         
         beforeEach(function () {
-            sinon.stub(Controller, 'saveData');
+            
         });
         
         afterEach(function () {
-            Controller.saveData.restore();
+            mongoose.connect('mongodb://localhost/leapnode_test', function () {
+                mongoose.connection.db.dropDatabase();
+            });
         });
 
-        it('Throw a error when given a empty parameter', function (done) {
+        //This test is suspect...
+        it('should throw a error when given a empty parameter', function (done) {
             var errors = null;
             
             try {
@@ -60,17 +64,30 @@ describe('DataBase Controller', function () {
             } catch (err) {
                 errors = err;
             }
+            
+            expect(errors).to.exist;
+            done();
         });
 
-        it.skip('Throw a error when given a volunteer with invalid name', function (done) {
-
+        //This test there is no sense
+        it.skip('throw a error when given a volunteer with invalid name', function (done) {
+            
         });
 
-        it.skip('Throw a error when given a volunteer with invalid gesture name', function (done) {
-
+        it('throw a error when given a volunteer with invalid gesture name', function (done) {
+            var errors = null;
+            
+            try {
+                Controller.saveData(invalidVolunteer);
+            } catch (err) {
+                errors = err;
+            }
+            
+            expect(errors).to.exist;
+            done();
         });
 
-        it.skip('Should execute normally without errors', function (done) {
+        it.skip('should execute normally without errors', function (done) {
 
         });
     });

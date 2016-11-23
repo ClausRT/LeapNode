@@ -22,13 +22,16 @@ module.exports = function (app) {
         
         //Separates the gestures array in gesture objects
         for (var k0 in volunteer.gestures) {
-            gestureName = volunteer.gestures[k0].name;
+            //gestureName = volunteer.gestures[k0].name;
             
             //Separates the frames array in frame objects
             //Add the gesture property to the oneFrame object
             for (var k1 in volunteer.gestures[k0].frames) {
                 oneFrame.volunteerID = 1;     //This value will be changed to a valid _id
-                oneFrame.gestureName = gestureName;
+                if (volunteer.gestures[k0].name)
+                    oneFrame.gestureName = gestureName;
+                else
+                    throw new Error('No gesture name');
                 
                 //I think that stringify the JSON is a better idea than move all his propreties to de oneFrame object
                 //Extract one frame from volunteer
@@ -44,7 +47,8 @@ module.exports = function (app) {
                 //Save the individual frames and get they _id
                 //Save the oneFrame objects
                 Gestures.save(oneFrame, function (err, doc) {
-                    newVolunteer.gestures.push(doc._id);
+                    if (err) throw err;
+                    else newVolunteer.gestures.push(doc._id);
                 });
                 
                 //Clear the oneFrame object
@@ -54,14 +58,18 @@ module.exports = function (app) {
         
         //Save the volunteer entry with all the _id references to her gestures
         Volunteers.save(newVolunteer, function (err, doc) {
-            volunteerId = doc._id;
+            if (err) throw err;
+            else volunteerId = doc._id;
         });
         
         //Find all the previous save gestures and update their _id reference to the volunteer
         for (var k in newVolunteer.gestures){
             Gestures.findOne({ _id: newVolunteer.gestures[k]}, function (err, frame) {
-                frame.volunteerID = volunteerId;
-                frame.save();                
+                if (err) throw err;
+                else {
+                    frame.volunteerID = volunteerId;
+                    frame.save();    
+                }
             });
         }
     };
